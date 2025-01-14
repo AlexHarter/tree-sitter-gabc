@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "gabc",
+      "camelcase": "gabc",
+      "scope": "source.gabc",
+      "file-types": [
+        ".gabc"
+      ],
+      "injection-regex": "^gabc$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "GPL-3.0",
+    "description": "A notation for representing Gregorian chant using ASCII characters.",
+    "authors": [
+      {
+        "name": "Alex Harter",
+        "email": "alex@harter.tech",
+        "url": "https://alex.harter.tech/"
+      }
+    ],
+    "links": {
+      "repository": "https://gregorio-project.github.io/gabc/index"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
