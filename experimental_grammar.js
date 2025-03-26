@@ -17,7 +17,7 @@ module.exports = grammar({
     ),
 
     header: $ => seq(
-      repeat1($.field),
+      repeat1(choice($.field, $.comment)),
       "%%"
     ),
 
@@ -30,16 +30,19 @@ module.exports = grammar({
     key: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
     value: $ => /[^;]+/,
 
-    score: $ => seq($.clef, repeat($.neume)),
+
+    comment: $ => token(seq("%", /.*/)),
+
+    
+    score: $ => repeat1($.neume),
 
     neume: $ => seq(
-      $.text,
+      $.lyric,
       '(',
       repeat($.note),
       ')'
     ),
-
-    lyric: $ => /.+/,
+    lyric: $ => /[a-zA-Z]+/,
     note: $ => seq(
       /[a-mA-M]/,
       repeat($.modifier),
